@@ -1,0 +1,12 @@
+---
+title: "Peer Review for Lab 4"
+format: html
+author: "Hannah Pawig"
+editor: visual
+---
+
+## My peer review for Scott Brydon's Lab 3
+
+Hi Scott! I really appreciate the use of white space after all of your equal signs and argument names, it made your code easy to follow. I also think your indentations make your code look very organized.
+
+I have a suggestion for when using summarize(). I noticed that when you summarized the mean of familiarity, the name of that column was just "mean". It may be a better practice to have a meaningful name when summarizing variables in the future, such as mean_familiarity, especially in situations where you may be summarizing multiple variables. Nice work, I think your html theme looks really cool too!

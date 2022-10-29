@@ -1,0 +1,11 @@
+---
+title: "Peer Review of Lab 2"
+format: html
+author: "Hannah Pawig"
+editor: visual
+---
+
+## Harshini's Peer Review of my Lab 2
+
+Hey Hannah! Your code is impeccable! It is very neat and you have spaces around every single one of your signs. One thing I did notice is that you never really labeled surveys as being data in your arguments. In the future maybe "data = surveys" or something would help.
+I love how you are very consistent with adding comments for sources and to state exactly what each portion of the code is doing. You did great regarding character wrapping as well.
