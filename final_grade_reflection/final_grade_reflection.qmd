@@ -13,7 +13,7 @@ In my group, I feel as though we collaborate in class often and are constantly l
 
 I have responded to peer feedback through my code projects after the given constructive criticism, like how I made sure to name all arguments so that it would be helpful when others read my code like Harshini had suggested (see peer_feedback.qmd). Every peer review I have given, I have put in all my effort to praise their code and nicely critique in a meaningful way; an example of my peer reviewing can be found in the giving_peer_feedback Quarto doc.
 
-My contribution to the classroom community is working with classmates outside of my assigned group who ask for help or are willing to work together on an assignment, always treating them in a respectful manner and intently listening to them when they speak to me - as we all should already be doing. I truly believe that I am on my path to achieving all of the goals I set for myself in the beginning of the course, especially because I feel as though I have learned many new methods in Rstudio that are beyond my base knowledge of the use of Rstudio and R.
+My contribution to the classroom community is working with classmates outside of my assigned group who ask for help or are willing to work together on an assignment, always treating them in a respectful manner and intently listening to them when they speak to me - as we all should already be doing. I truly believe that I am on my path to achieving all of the goals I set for myself in the beginning of the course, especially because I feel as though I have learned many new methods in Rstudio that are beyond my base knowledge of the use of Rstudio and R. After compiling some of my work thus far in the quarter, I believe that I've earned an A so far in this course.
 
 
 
