@@ -34,6 +34,9 @@ avocados_region <- data.frame(region = c("Midsouth", "GreatLakes",
                                          "West", "WestTexNewMexico"))
 
 avocados_state <- data.frame(state = "California")
+
+avocados_totalUS <- data.frame(region = "TotalUS")
+
 avocados_metro <- avocados_clean |>
   anti_join(avocados_state, by = c('region' = 'state')) |>
   anti_join(avocados_region, by = c('region' = 'region')) |>
