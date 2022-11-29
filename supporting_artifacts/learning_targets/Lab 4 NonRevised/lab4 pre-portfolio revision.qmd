@@ -7,6 +7,7 @@ format:
     code-fold: true
     code-summary: "Click me to see the code!"
     theme: lux 
+    self-contained: true
 execute:
   message: false
 editor: visual
