@@ -2,13 +2,16 @@
 title: "Data Import Practice"
 format:
   html:
-    code-fold: true
+    code-fold: show
     code-summary: "the code's hiding spot"
+    self-contained: true
+auhtor: "Hannah Pawig"
 editor: visual
 ---
 
 ```{r}
 #| message: false
+#| include: false
 library(tidyverse)
 library(readxl)
 library(here)
@@ -32,6 +35,7 @@ ages_data <- read_csv(here::here("supporting_artifacts",
 #| message: false
 # Code to read in the ages_tab.txt data goes here! 
 ages_tab_data <- read_table(here::here("supporting_artifacts",
+                                       "learning_targets",
                                        "Preview Activity 7",
                                        "ages_tab.txt"))
 
@@ -43,6 +47,7 @@ ages_tab_data <- read_table(here::here("supporting_artifacts",
 #| message: false
 # Code to read in the ages_mystery.txt data goes here! 
 ages_mystery_data <- read_delim(here::here("supporting_artifacts",
+                                           "learning_targets",
                       "Preview Activity 7",
                       "ages_mystery.txt"), delim = "|")
 
@@ -53,6 +58,7 @@ ages_mystery_data <- read_delim(here::here("supporting_artifacts",
 ```{r}
 # Code to read in the ages.xlsx data goes here! 
 ages_xlsx_data <- read_excel(here::here("supporting_artifacts",
+                                        "learning_targets",
                                         "Preview Activity 7",
                                         "ages.xlsx"))
 
@@ -62,6 +68,7 @@ ages_xlsx_data <- read_excel(here::here("supporting_artifacts",
 
 ```{r}
 stringsAsFactors_csv <- read.csv(here::here("supporting_artifacts",
+                                            "learning_targets",
                                             "Preview Activity 7",
                                             "ages.csv"),
                                  stringsAsFactors = TRUE)
@@ -75,6 +82,7 @@ stringsAsFactors_csv <- read.csv(here::here("supporting_artifacts",
 # Code to read in the ages.csv with "Name" as a factor and "Age" as a character goes here! 
 
 step_6 <- read_csv(here::here("supporting_artifacts",
+                              "learning_targets",
                                             "Preview Activity 7",
                                             "ages.csv"),
                    col_types = cols(
