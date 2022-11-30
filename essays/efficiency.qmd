@@ -1,5 +1,22 @@
 ---
 title: "The Power of Efficiency"
-format: html
+format: 
+  html:
+    theme: lux
+    self-contained: true
+author: "Hannah Pawig"
+date: "12/3/22"
 editor: visual
 ---
+
+Merriam Webster defines *efficiency* as \"the quality or degree of being efficient,\" in which it also defines *efficient* as, \"productive of desired effects.\" In statistical computing and data science, efficiency is the way to a solution that saves the most time, requires less steps, produces an accurate output consistently, and is the most modern. In data science and statistical computation, when using Rstudio it can look like a small and concise chunk that uses the \"tidyverse\" R package (and other frequently used by today\'s R community) to filter and extract necessary data to create a more focused data table that can be used for summaries or visualizations without too many extra unnecessary tools.
+
+Efficiency allows for those who work in these fields to create complex outputs of many data types to be used for statistical analyses using a method where others can reproduce a similar output to do their own investigations without spending too much time learning said method, since it should not be extremely perplexing. An efficient method should look like it \"makes sense\" to why a person would use certain tools in the way that they did. Being efficient is significant because it reduces unnecessary extra labor, saves time, and builds better modern solutions that can be passed onto others in the field.
+
+One a-ha moment I had in terms of having a more efficient line of code was my first use of the %in% operator to filter my dataset that satisfied being in a certain range of a variable in Lab 3 question 10: instead of listing each of the fifty thousand possible values for the city variable, I just wrote city %in% 10000:60000 for that filtering component. The use of this operator inside of filter also makes
+it easily understandable to see what I\'m filtering city by, as opposed to several lines filtering city using Boolean expressions such as city == 10000. Looking back at this code I wrote almost 2 months ago doesn\'t change my understanding of the process I was going through in this question, that specific line of code tells me that I wanted observations with a city population from 10000 to 60000.
+
+Another instance of an efficiency encounter was in Lab 8, where we used a previously created function (pluralize_gift) that would be used in a new function we created, make_phrase, which then was used in a sing_line function that could produce the full lyrics of \"The 12 Days of Christmas\" song in three lines along with the use of map(), a concatenating string function, and a concatenate function. I realized that creating functions that contain clearly defined prospective outputs can help make a large task such as writing the lyrics for a repetitive song much easier through iteration and minimal code writing because of reused functions.
+
+
+
