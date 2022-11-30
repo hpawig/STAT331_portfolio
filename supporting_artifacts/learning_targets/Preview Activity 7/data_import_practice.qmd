@@ -20,6 +20,7 @@ library(here)
 #| message: false
 # Code to read in the ages.csv data goes here! 
 ages_data <- read_csv(here::here("supporting_artifacts",
+                                 "learning_targets",
                                  "Preview Activity 7",
                                  "ages.csv"))
 

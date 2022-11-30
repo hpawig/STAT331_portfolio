@@ -19,8 +19,8 @@ library(tidyverse)
 library(here)
 library(scales)
 avocados <- read_csv(here::here("supporting_artifacts",
-                                "learning_targets_ev",
-                                "Lab 4 NR",
+                                "learning_targets",
+                                "Lab 4 NonRevised",
                                 "avocado.csv"))
 ```
 

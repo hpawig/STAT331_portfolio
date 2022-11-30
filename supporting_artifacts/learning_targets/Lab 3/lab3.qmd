@@ -23,7 +23,7 @@ library(here)
 ```{r}
 #| message: false
 hiphop <- read_csv(here::here("supporting_artifacts",
-                              "learning_targets_ev",
+                              "learning_targets",
                               "Lab 3",
                               "hiphop.csv"))
 ```
