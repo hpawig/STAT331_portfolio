@@ -85,11 +85,12 @@ avocados_clean |>
 
 The highest volume of avocados sold in a month was 533,030,497 avocados, which occurred in January.
 
-## 5) Which metro area regions sold the most total avocados? {style="color: darkolivegreen"}
+## 5a) Which metro area regions sold the most total avocados? {style="color: darkolivegreen"}
 
 Metro area regions that sold the *most* total avocados, based on their respective average total volume across the years 2015 to 2018 were
 
 ```{r finding_metro_areas}
+#| echo: true
 # using helper data sets to isolate the metro areas
 avocados_metro <- avocados_clean |>
   anti_join(avocados_state, by = c('region' = 'state')) |>
@@ -112,7 +113,7 @@ metro_top_5 <- avocados_metro |>
 4.  Dallas-Fort Worth (Texas)
 5.  Houston (Texas)
 
-## Let's visualize! {style="color: saddlebrown"}
+## 5b) Let's visualize! {style="color: saddlebrown"}
 
 ```{r boxplots}
 # resources used for changing axis intervals:

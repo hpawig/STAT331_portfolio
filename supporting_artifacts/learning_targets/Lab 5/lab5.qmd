@@ -7,7 +7,7 @@ format:
     smooth-scroll: true
     code-fold: true
     code-summary: "Click me to see the code!"
-    number-sections: true
+    self-contained: true
 editor: visual
 execute:
   error: false
@@ -27,8 +27,9 @@ options(dplyr.summarise.inform = FALSE)
 
 ```{r reading_in_data}
 #| message: false
-surveys <- read_csv(here::here("Week 5",
-                              "data",
+surveys <- read_csv(here::here("supporting_artifacts",
+                              "learning_targets",
+                              "Lab 5",
                               "surveys.csv"))
 ```
 
@@ -63,7 +64,7 @@ surveys |>
 
 # Time-Series Plot
 
-1.  Visualization of weights varying in each genus across time in the study.
+3.  Visualization of weights varying in each genus across time in the study.
 
 ```{r}
 surveys |>
@@ -73,7 +74,7 @@ surveys |>
   geom_line()
 ```
 
-2.  Calculate and plot the mean weight for each year (for each genus).
+4.  Calculate and plot the mean weight for each year (for each genus).
 
 ```{r}
 surveys |>
@@ -88,7 +89,7 @@ surveys |>
        y = "Mean Weight (gm)")
 ```
 
-3.  Reorder the graph so the weights go in descending order.
+5.  Reorder the graph so the weights go in descending order.
 
 ```{r}
 # resource for legend reordering
@@ -112,7 +113,7 @@ surveys |>
   theme(axis.title.y = element_text(angle = 0))
 ```
 
-4.  New legend title and moving y-axis information to the plot title
+6.  New legend title and moving y-axis information to the plot title
 
 ```{r}
 #| message: false
@@ -139,7 +140,7 @@ surveys |>
 
 # Captures over the Week
 
-1.  Create a visualization of the number of rodents captured each day of the week
+7.  Create a visualization of the number of rodents captured each day of the week
 
 ```{r}
 surveys |>
@@ -152,7 +153,7 @@ surveys |>
 
 ```
 
-1.  Change the order of the day of the week to go Monday through Sunday.
+8.  Change the order of the day of the week to go Monday through Sunday.
 
 ```{r}
 surveys_plot_data <- surveys |>
@@ -169,7 +170,7 @@ surveys_plot_data |>
   theme(axis.title.y = element_text(angle = 0))
 ```
 
-3.  Collapse Mon-Fri into a `Weekday` level, and collapse Saturday and Sunday into a `Weekend` level. Plot the number of rodents captured between the two groups.
+9.  Collapse Mon-Fri into a `Weekday` level, and collapse Saturday and Sunday into a `Weekend` level. Plot the number of rodents captured between the two groups.
 
 ```{r}
 surveys_plot_data |>
