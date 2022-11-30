@@ -5,6 +5,7 @@ format:
     code-fold: true
     code-summary: "Here is the code."
     self-contained: true
+    number-sections: true
 editor: visual
 author: "Hannah Pawig"
 ---
@@ -13,9 +14,12 @@ author: "Hannah Pawig"
 
 ```{r setup}
 #| message: false
+#| include: false
 library(tidyverse)
 library(here)
 library(scales)
+options(dplyr.summarise.inform = FALSE)
+
 avocados <- read_csv(here::here("supporting_artifacts",
                                 "learning_targets",
                                 "Challenge 4",
@@ -46,6 +50,8 @@ avocados_metro <- avocados_clean |>
 
 ```
 
+## Creating data set of median home prices
+
 ```{r}
 #| message: false
 #resources:
@@ -74,6 +80,12 @@ house_prices_CA <- data.frame(metro_area = c(
                                                    )) |>
   mutate(year = as.numeric(year))
 
+
+```
+
+## Joining home prices dataset with avocados dataset
+
+```{r}
 # resource: join by multiple columns
 # https://www.statology.org/dplyr-join-on-multiple-columns/
 avocados_CA <- avocados_metro |> 
@@ -89,8 +101,9 @@ CA_houses_avocados <- avocados_CA |>
             avg_avocado_volume_yearly = round(mean(total_volume), digits = 2),
             avg_house_price = mean(avg_house_price)
             )
-
 ```
+
+## Plotting annual avocado price vs. average house prices!
 
 ```{r plotting}
 #| message: false

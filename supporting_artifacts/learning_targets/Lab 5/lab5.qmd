@@ -1,0 +1,187 @@
+---
+title: "Lab 5"
+author: "Hannah Pawig"
+format:
+  html: 
+    theme: lux
+    smooth-scroll: true
+    code-fold: true
+    code-summary: "Click me to see the code!"
+    number-sections: true
+editor: visual
+execute:
+  error: false
+  warning: false
+---
+
+# Revisiting Lab 2
+
+```{r setup}
+#| message: false
+library(tidyverse)
+library(here)
+library(forcats)
+library(lubridate)
+options(dplyr.summarise.inform = FALSE)
+```
+
+```{r reading_in_data}
+#| message: false
+surveys <- read_csv(here::here("Week 5",
+                              "data",
+                              "surveys.csv"))
+```
+
+```{r plot_from_lab2}
+
+surveys |>
+  ggplot(mapping = aes(x = weight, y = species)) +
+        geom_jitter(alpha = 0.02, color = "red") +
+        geom_boxplot() +
+        xlab("Weight (gm)") +
+        ylab("Species")
+```
+
+1.  Reordering the box-plots to descending order &
+2.  Moving the y-axis label to the top.
+
+```{r}
+# resource: https://stackoverflow.com/questions/1330989/rotating-and-spacing-axis-labels-in-ggplot2
+surveys |>
+  mutate(
+    species = as.factor(species),
+    species = fct_reorder(.f = species, 
+                          .x = weight, 
+                          .desc = TRUE)) |>
+  ggplot(mapping = aes(x = weight, y = species)) +
+        geom_jitter(alpha = 0.02, color = "red") +
+        geom_boxplot() +
+        xlab("Weight (gm)") +
+        ylab("Species") +
+  theme(axis.title.y = element_text(angle = 0))
+```
+
+# Time-Series Plot
+
+1.  Visualization of weights varying in each genus across time in the study.
+
+```{r}
+surveys |>
+  ggplot(mapping = aes(x = year,
+                       y = weight,
+                       color = genus)) +
+  geom_line()
+```
+
+2.  Calculate and plot the mean weight for each year (for each genus).
+
+```{r}
+surveys |>
+  group_by(genus, year) |>
+  summarise(mean_weight = mean(weight)) |>
+  ggplot(mapping = aes(x = year,
+                       y = mean_weight,
+                       color = genus)) +
+  geom_point() +
+  geom_line() +
+  labs(x = "Year",
+       y = "Mean Weight (gm)")
+```
+
+3.  Reorder the graph so the weights go in descending order.
+
+```{r}
+# resource for legend reordering
+# https://stackoverflow.com/questions/10074483/r-how-to-reorder-legend-key-in-ggplot2-line-plot-to-match-the-final-values-in-e
+#| message: false
+surveys |>
+  mutate(
+    genus = as.factor(genus),
+    genus = fct_reorder(.f = genus,
+                        .x = weight,
+                        .desc = TRUE)) |>
+  group_by(year, genus) |>
+  summarize(mean_weight = mean(weight)) |>
+  ggplot(mapping = aes(x = year,
+                       y = mean_weight,
+                       color = genus)) +
+  labs(x = "Year",
+       y = "Mean Weight (gm)") +
+  geom_line() +
+  geom_point() +
+  theme(axis.title.y = element_text(angle = 0))
+```
+
+4.  New legend title and moving y-axis information to the plot title
+
+```{r}
+#| message: false
+surveys |>
+  mutate(
+    genus = as.factor(genus),
+    genus = fct_reorder(.f = genus,
+                        .x = weight,
+                        .desc = TRUE)) |>
+  group_by(year, genus) |>
+  summarise(mean_weight = mean(weight)) |>
+  ggplot(mapping = aes(x = year,
+                       y = mean_weight,
+                       color = genus)) +
+  geom_point() +
+  geom_line() +
+  labs(x = "Year",
+       color = "Rodent Genus",
+       title = "Average Genus Weight (gm) by Year (1977-2002)") +
+
+    theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank())
+```
+
+# Captures over the Week
+
+1.  Create a visualization of the number of rodents captured each day of the week
+
+```{r}
+surveys |>
+  filter(!is.na(day_of_week)) |> #removed observations with NA for day of week
+  ggplot(mapping = aes(x = day_of_week)) +
+  geom_bar() +
+  labs(x = "Day of Week",
+       y = "Number of Rodents") +
+  theme(axis.title.y = element_text(angle = 0))
+
+```
+
+1.  Change the order of the day of the week to go Monday through Sunday.
+
+```{r}
+surveys_plot_data <- surveys |>
+  filter(!is.na(day_of_week)) |>
+  mutate(
+    day_of_week = 
+    fct_relevel(day_of_week, c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")))
+
+surveys_plot_data |>
+  ggplot(mapping = aes(x = day_of_week)) +
+  geom_bar() +
+  labs(x = "Day of Week",
+       y = "Number of Rodents") +
+  theme(axis.title.y = element_text(angle = 0))
+```
+
+3.  Collapse Mon-Fri into a `Weekday` level, and collapse Saturday and Sunday into a `Weekend` level. Plot the number of rodents captured between the two groups.
+
+```{r}
+surveys_plot_data |>
+  mutate(day_type = fct_collapse(day_of_week,
+                                Weekday = c("Mon", "Tue", "Wed",
+                                            "Thu", "Fri"),
+                                Weekend = c("Sat", "Sun"))) |>
+  ggplot(mapping = aes(x = day_type,
+                       fill = day_of_week)) +
+  geom_bar() +
+  labs(x = "Day of Week",
+       y = "Number of Rodents",
+       fill = "Day") +
+  theme(axis.title.y = element_text(angle = 0))
+```
