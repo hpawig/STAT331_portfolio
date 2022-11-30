@@ -141,7 +141,43 @@ avocados_metro |>
 
 > We're going to answer some questions about regions in California.
 
-## 6) In which regions is the price of organic versus conventional avocados most different? {style="color: darkolivegreen"}
+### Portfolio Revision: Question 6
+
+## 6) In which regions is the price of organic versus conventional avocados most different? \[Not revised\] {style="color: darkolivegreen"}
+
+```{r}
+#| message: false
+
+#helper data frame for only CA cities
+CA_cities <- data.frame(city = c('LosAngeles', 'SanDiego',
+                                  'Sacramento', 'SanFrancisco'))
+
+
+avocados_california_regions <- avocados_metro |>
+  semi_join(CA_cities, by = c("metro_area" = "city")) |>
+  group_by(metro_area, type) |>
+  mutate(avg_price_by_type = mean(average_price)) |>
+  distinct(metro_area, .keep_all = TRUE)
+
+avocados_california_regions |>
+  select(metro_area, type, avg_price_by_type) |>
+  group_by(metro_area) |>
+  summarise(
+    diff_price = round(abs(
+                            avg_price_by_type[match("conventional", type)] -
+                            avg_price_by_type[match("organic", type)]), digits = 2))
+
+# tibble of avg prices by CA region and avocado type
+avocados_california_regions |>
+  group_by(metro_area) |>
+  select(metro_area, type, avg_price_by_type)
+```
+
+[Dr T's feedback:]{.underline}
+
+*In this class we don\'t use the `match()` function. I would like for you to accomplish this task using `pivot_wider()`. Give this another go!*\
+
+## 6) In which regions is the price of organic versus conventional avocados most different? \[Revised\] {style="color: darkolivegreen"}
 
 ```{r}
 #| message: false
