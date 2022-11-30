@@ -7,6 +7,7 @@ format:
     code-fold: true
     number-sections: true
     code-summary: "Here's the code!"
+    self-contained: true
 editor: visual
 ---
 
@@ -142,7 +143,7 @@ hiphop_clean |>
 
 # **Familiar Words** {style="color: darkblue"}
 
-**a.**
+**9a.**
 
 ```{r}
 # People under 20
@@ -165,7 +166,7 @@ hiphop_clean |>
 
 For people under the age of 20, the most familiar phrase on average was "off the hook" --- with a mean familiarity rating of about 4.424. The least familiar phrase among this subset of participants is "catch the vapor"; the mean familiarity rating for this phrase was about 1.025.
 
-**b.**
+**9b.**
 
 ```{r}
 # Non-white Women
@@ -188,7 +189,7 @@ hiphop_clean |>
 
 For non-white women in this study, the most familiar phrase on average was "feel me" --- with a mean familiarity rating of about 4.192. The least familiar phrases among this subset of participants were "break someone out," "dukey rope," "plex," and "rollie"; the mean familiarity rating for these were all 1.
 
-**c.**
+**9c.**
 
 ```{r}
 # White men over 30
@@ -236,6 +237,8 @@ Among the white men over the age of 30 in this study, the most familiar phrase o
 These 20 words each had the lowest familiarity rating average of 1, of this specific subset of participants.
 
 # Finding Justin Bieber {style="color: salmon"}
+
+10\.
 
 ```{r}
 # resource:https://stackoverflow.com/questions/51107901/how-do-i-filter-a-range-of-numbers-in-r
