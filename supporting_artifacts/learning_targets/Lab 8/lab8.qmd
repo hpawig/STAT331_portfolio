@@ -31,8 +31,10 @@ library(english)
 xmas <- read.csv("https://www.dropbox.com/s/e584pryn8evm1gz/xmas.csv?dl=1") 
 ```
 
+## Creating pluralize_gift function
+
 ```{r pluralize_function}
-#| code-summary: "Creating pluralize_gift!"
+#| code-fold: show
 # Function that takes a noun and makes it plural
 # Arguments -- gift -- A string or vector of strings
 # Return -- A string or vector of strings with the pluralized words
@@ -57,8 +59,10 @@ return(gift)
 }
 ```
 
+## Creating make_phrase function
+
 ```{r phrase-function}
-#| code-summary: "Creating make_phrase"
+#| code-fold: show
 make_phrase <- function(num_word, item, verb, adjective, location) {
   
   ## Step 1: Replace NAs with blank strings
