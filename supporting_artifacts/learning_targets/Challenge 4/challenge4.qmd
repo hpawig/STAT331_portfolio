@@ -5,7 +5,6 @@ format:
     code-fold: true
     code-summary: "Here is the code."
     self-contained: true
-    number-sections: true
 editor: visual
 author: "Hannah Pawig"
 ---
@@ -50,7 +49,7 @@ avocados_metro <- avocados_clean |>
 
 ```
 
-## Creating data set of median home prices
+## 1. Creating data set of median home prices
 
 ```{r}
 #| message: false
@@ -83,7 +82,7 @@ house_prices_CA <- data.frame(metro_area = c(
 
 ```
 
-## Joining home prices dataset with avocados dataset
+## 2. Joining home prices dataset with avocados dataset
 
 ```{r}
 # resource: join by multiple columns
@@ -103,7 +102,7 @@ CA_houses_avocados <- avocados_CA |>
             )
 ```
 
-## Plotting annual avocado price vs. average house prices!
+## 3. Plotting annual avocado price vs. average house prices!
 
 ```{r plotting}
 #| message: false

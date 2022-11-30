@@ -7,6 +7,7 @@ format:
     smooth-scroll: true
     code-fold: true
     code-summary: 'This is where the code lives'
+    self-contained: true
 editor: visual
 execute:
   error: false
@@ -24,8 +25,9 @@ options(dplyr.summarise.inform = FALSE)
 
 ```{r data}
 #| message: false
-A_baby_names <- read_csv(here('Week 9',
-                            'data',
+A_baby_names <- read_csv(here('supporting_artifacts',
+                            'learning_targets',
+                            'Lab 9',
                             'StateNames_A.csv'))
 ```
 

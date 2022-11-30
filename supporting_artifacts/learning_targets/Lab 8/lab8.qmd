@@ -8,7 +8,6 @@ format:
     code-fold: true
     code-summary: 'This is where the code lives'
     self-contained: true
-    number-sections: true
 editor: visual
 execute:
   error: false
@@ -31,7 +30,7 @@ library(english)
 xmas <- read.csv("https://www.dropbox.com/s/e584pryn8evm1gz/xmas.csv?dl=1") 
 ```
 
-## Creating pluralize_gift function
+## 1. Creating pluralize_gift function
 
 ```{r pluralize_function}
 #| code-fold: show
@@ -59,7 +58,7 @@ return(gift)
 }
 ```
 
-## Creating make_phrase function
+## 2. Creating make_phrase function
 
 ```{r phrase-function}
 #| code-fold: show
@@ -93,7 +92,7 @@ make_phrase <- function(num_word, item, verb, adjective, location) {
 
 # Iteration
 
-## Creating a sing_line function
+## 3. Creating a sing_line function
 
 ```{r singline-function}
 #| code-fold: show
@@ -122,7 +121,7 @@ sing_line <- function(dataset, line, phrase_col) {
 }
 ```
 
-## Small Test
+## 4. Small Test
 
 ```{r}
 xmas2 <- xmas |>
@@ -139,7 +138,7 @@ xmas2 |>
   sing_line(line = 2, phrase_col = Full.Phrase)
 ```
 
-## A Larger Test
+## 5. A Larger Test
 
 ```{r}
 map_chr(1:12, ~ sing_line(xmas2, .x, Full.Phrase)) |>
