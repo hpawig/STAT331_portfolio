@@ -41,9 +41,7 @@ I believe the grade I have earned in this course is an A+. Throughout the quarte
 
 *Lab 8*
 
--   Q1: **R-3**
-
--   Q3: **PE-2**
+-   Q3: **PE-2, R-3**
 
 -   Q5: **PE-3**
 
@@ -59,16 +57,16 @@ I believe the grade I have earned in this course is an A+. Throughout the quarte
 
 -   Q9: **PE-4,** **DVS-3**
 
-*Challenge 4*
+*Challenge 9*
 
 -   Q1: **DVS-6, DVS-7**
 
-I've displayed a commitment to continued learning by always trying to find ways to revise my original thinking every time I am given the chance, and finding alternative solutions that we may not have seen in class but doing my own research to give other methods a try on assignments. In my first attempt to revise a few questions from Lab 4 (found in lab 4 pre-revision.html), I did end up changing my methods to find the correct answers for questions 4 and 5; for 6, I found the differences in avocado prices by type using the match() function, which is beyond the scope of this course, so I earned a G on that problem. I believe this to be one instance where I extended my learning because I found an alternative way to calculate differences between rows. Using a trend line for the visualization in Challenge 4 was another way I extended my learning.
+I've displayed a commitment to continued learning by always trying to find ways to revise my original thinking every time I am given the chance, and finding alternative solutions that we may not have seen in class but doing my own research to give other methods a try on assignments. In my first attempt to revise a few questions from Lab 4, I did end up changing my methods to find the correct answers for questions 4 and 5; for 6, I found the differences in avocado prices by type using the match() function, which is beyond the scope of this course, so I earned a G on that problem. I believe this to be one instance where I extended my learning because I found an alternative way to calculate differences between rows. Using a trend line for the visualization in Challenge 4 was another way I extended my learning, since at that time we had not learned how to fit a linear regression line.
 
-In my second revision of Lab 4 (question 6), which I am submitting for this portfolio, I was able to find a way to use pivot_wider() for question to find differences in price between avocado types within each of the 4 California regions, after initially finding these price differences with a calculator. This was an example of my commitment to revision, as this revision is my second revision attempt at earning an S for the problem. In each of my revisions, my attached reflections were not a simple comment about me changing my code; I explained and intentionally reflected on my old and new thought processes (an example can be found in continued learning).
+In my second revision of Lab 4 (question 6), which I am submitting for this portfolio, I was able to find a way to use pivot_wider() for question to find differences in price between avocado types within each of the 4 California regions, after initially finding these price differences with a calculator. This was an example of my commitment to revision, as this revision is my second revision attempt at earning an S for the problem. In each of my revisions, my revision reflections were not a simple comment about me changing my code; I explained and intentionally reflected on my old and new thought processes.
 
-In my group, I feel as though we collaborate in class often and are usually on the lookout for each other's progress. We don't explicitly assign roles to each other, but each of us have done responsibilities from all 4 different roles throughout the quarter. Outside of class, each of us communicate in our group text chat in which we have many conversations about any and all of the course assignments, which is essential to our group's collaboration because we have different schedules. I came to Tuesday lectures with all preview activities completed (except when I was out sick for a couple weeks and couldn't attend in person meetings, but I still did the preview activities on time). I continuously have put the effort into helping my group mates and collaborating with them on assignments, in and out of the classroom.
+In my group, I feel as though we collaborate in class often and are usually on the lookout for each other's progress. We don't explicitly assign roles to each other, but each of us have done responsibilities from all 4 different roles throughout the quarter. Outside of class, each of us communicate in our group text chat in which we have many conversations about any and all of the course assignments, which was essential to our group's collaboration because we have different schedules. I came to Tuesday lectures with all preview activities completed (except when I was out sick for a couple weeks and couldn't attend in person meetings, but I still did the preview activities on time). I continuously have put the effort into helping my group mates and collaborating with them on assignments, in and out of the classroom.
 
-I have responded to peer feedback through my code projects after the given constructive criticism, like how I made sure to name all arguments so that it would be helpful when others read my code like Harshini had suggested (see peer_feedback.qmd). Every peer review I have given, I have put in all my effort to praise their code and nicely critique in a meaningful way; an example of my peer reviewing can be found in the peer_reviews folder.
+I have responded to peer feedback through my code projects after the given constructive criticism, like how I made sure to name all arguments so that it would be helpful when others read my code like Harshini had suggested for my Lab 2. Every peer review I have given, I have put in all my effort to praise their code and nicely make suggestions in a meaningful way, an example is my peer review for a classmate's Lab 3.
 
 My contribution to the classroom community is working with classmates outside of my assigned group who ask for help or are willing to work together on an assignment, always treating them in a respectful manner and intently listening to them when they speak to me - as we all should already be doing. Another way I have contributed a little to the classroom community is by asking general questions about assignments in our discord server a few times, instead of immediately sending a private message to Dr. T. In the discord, I have also provided my own insight to help answer a fellow classmate's question for everyone to see.
