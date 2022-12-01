@@ -37,6 +37,10 @@ Challenge 9
 
 Lab 4
 
+Challenge 4
+
+Challenge 9 Portfolio Revision
+
 ### Demonstration of Revising My Thinking
 
 Lab 4 Portfolio Revision
@@ -44,6 +48,7 @@ Lab 4 Portfolio Revision
 Lab 3 Revision Reflection
 
 ### Demonstration of Peer Support
+
 JASH Group Chat Collaboration
 
 A Peer's Review for My Lab 2
