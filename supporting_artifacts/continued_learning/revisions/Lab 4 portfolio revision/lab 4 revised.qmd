@@ -175,7 +175,7 @@ avocados_california_regions |>
 
 [Dr T's feedback:]{.underline}
 
-*In this class we don\'t use the `match()` function. I would like for you to accomplish this task using `pivot_wider()`. Give this another go!*\
+*In this class we don't use the `match()` function. I would like for you to accomplish this task using `pivot_wider()`. Give this another go!*\
 
 ## 6) In which regions is the price of organic versus conventional avocados most different? \[Revised\] {style="color: darkolivegreen"}
 

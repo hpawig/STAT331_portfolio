@@ -1,0 +1,283 @@
+---
+title: "Challenge 9"
+author: "Hannah Pawig"
+format:
+  html:
+    theme: lux
+    smooth-scroll: true
+    code-fold: true
+    code-summary: 'This is where the code lives'
+    self-contained: true
+editor: visual
+execute:
+  error: false
+---
+
+```{r}
+#| include: false
+#| message: false
+library(tidyverse)
+library(here)
+library(ggtext)
+library(knitr)
+library(kableExtra)
+library(DT)
+options(dplyr.summarise.inform = FALSE)
+
+```
+
+```{r data}
+#| message: false
+A_baby_names <- read_csv(here('supporting_artifacts',
+                              'continued_learning',
+                              'revisions',
+                            'Challenge 9 portfolio revision',
+                            'StateNames_A.csv'))
+```
+
+# Dataset Preview
+
+```{r dataset-preview}
+head(A_baby_names, 50) |> 
+  datatable()
+```
+
+# Summarizing & Visualizing the Number of Allisons
+
+## 1. Summary Table
+
+> Number of babies named "Allison" for each state and sex of the baby.
+
+```{r}
+#| message: false
+A_baby_names |>
+  rename(Sex = 'Gender') |> 
+  filter(Name == 'Allison') |> 
+  group_by(State, Sex) |> 
+  summarise(
+    Num_Allisons = sum(Count)
+  )  |>
+  pivot_wider(
+              names_from = Sex,
+              values_from = Num_Allisons) |> 
+  mutate(
+    across(.cols = 'F':'M',
+           .fns = ~replace_na(., 0))
+  ) |> 
+  datatable(caption = 'Babies named "Allison" in the US',
+            colnames = c('Number of Females' = 'F',
+                         'Number of Males' = 'M'),
+            style = 'auto',
+            editable = TRUE,
+            class = c('cell-border', 'stripe'))
+```
+
+## 2. Focusing on babies assigned as Female at birth
+
+```{r}
+#| code-fold: false
+Allisons <- A_baby_names |> 
+  rename(Sex = 'Gender') |> 
+  filter(Name == 'Allison',
+         Sex == 'F') |> 
+  group_by(Year) |> 
+  summarise(Num_Allisons = sum(Count))
+
+```
+
+## 3. Visualization
+
+```{r}
+Allisons |> 
+  ggplot(mapping = aes(x = Year,
+                       y = Num_Allisons)) +
+  geom_line(color = 'deeppink') +
+  labs(title = 'Number of Female Babies named Allison',
+       subtitle = 'United States, 1997-2014') +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(size = 7)) +
+  scale_x_continuous(
+    breaks = seq(from = 1997, to = 2014, by = 1)
+  )
+
+```
+
+# Modeling the Number of Allisons
+
+## 4. Creating a linear model with the year as the explanatory variable, and the number of Allisons as the response.
+
+```{r}
+#| message: false
+#| code-fold: false
+lm_Allisons <- Allisons |> 
+  lm(formula = Num_Allisons ~ Year,
+     data = _)
+
+```
+
+## 5. Visualize the Regression Model
+
+```{r}
+#| message: false
+lm_Allisons |> 
+  ggplot(mapping = aes(x = Year,
+                       y = Num_Allisons)) +
+  geom_point() +
+  stat_smooth(method = 'lm') +
+  labs(title = 'Time (Years) vs. Number of Babies named "Allison"',
+       x = '\nTime (Years)') +
+  theme(
+    axis.title.y = element_blank(),
+    axis.title.x = element_text(size = 10),
+    axis.text.x = element_text(size = 7)
+  ) +
+  scale_x_continuous(
+    breaks = seq(from = 1997, to = 2014, by = 1)
+  )
+```
+
+## 6. The Estimated Regression Equation
+
+```{r}
+lm_Allisons
+```
+
+Predicted number of babies named Allison = 209689.8 - 101.5(Year)
+
+## 7. Plotting Residuals
+
+```{r}
+lm_Allisons |> 
+  broom::augment() |> 
+  ggplot(mapping = aes(y = .resid, x = .fitted)) +
+  geom_point() +
+  labs(title = 'Predicted vs. Residual Number of Allisons',
+       subtitle = 'Estimated based on a given year, 1997-2014') +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank())
+```
+
+> No, I don't see any obvious patterns in the residual plot, the points are just randomly scattered around 0.
+
+## 8. What can we conclude from the model?
+
+Per year increase, there are 101 fewer Allisons than the previous year, and overall there is a downward trend for naming babies "Allison" from 1997 to 2014.
+
+# Spelling by State
+
+## 9. Finding the Allan/Alan/Allen babies
+
+```{r}
+Als <- A_baby_names |> 
+  filter(Name == 'Allen' | Name == 'Allan' | Name == 'Alan')
+
+
+Als |> 
+  group_by(Year, Name) |> 
+  summarise(
+    Num_Als = sum(Count)
+  ) |> 
+  ggplot(mapping = aes(x = Year,
+                       y = Num_Als,
+                       color = Name)) +
+  geom_line() +
+  labs(title = "Babies named <span style='color:red'>Alan</span>, <span style='color
+                :darkorange'>Allan</span>, or <span style='color:chocolate4'>Allen</span>",
+       subtitle = 'United States, 1997-2014') +
+  scale_color_manual(values = c('red', 'darkorange', 'chocolate4')) +
+  theme(legend.position = 'none',
+        plot.title = element_markdown(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(size = 7)) +
+  scale_x_continuous(breaks = seq(from = 1997, to = 2014, by = 1))
+
+```
+
+## 10. The Allan babies in California and Pennsylvania (in 2000)
+
+```{r}
+
+Als |> 
+  filter(State == 'CA' | State == 'PA',
+         Name == 'Allan',
+         Year == 2000) |>
+  group_by(State, Name) |> 
+  summarise(
+    Count = sum(Count)
+  ) |> 
+  mutate(
+     Count = replace_na(Count, 0)
+  )|> 
+
+  pivot_wider(names_from = State,
+            values_from = Count) |> 
+  kable(align = 'ccc',
+        caption = 'Number of Allan Babies in California & Pennsylvania (2000)') |> 
+  kable_material_dark()
+```
+
+## 11. Percentage Breakdown for the 3 spellings of Allan in CA & PA (2000) \[Portfolio Revision\]
+
+```{r calculate-total-function}
+#| code-summary: 'Creating a calculate_total function'
+calculate_total <- function(df, state, year) {
+ df <- df |> 
+    filter(Year == {{ year }},
+           State == {{ state }})
+ total <- sum(df$Count)
+   
+  return(total)
+}
+```
+
+#### Pre-revised table
+
+```{r unrevised-chunk}
+Als |> 
+  filter(State == 'CA' | State == 'PA',
+         Year == 2000) |>
+  group_by(State, Name) |>
+    mutate(
+     Count = replace_na(Count, 0),
+     Total = case_when(
+        State == 'CA' ~ calculate_total(df = Als, state = 'CA', year = 2000),
+        State == 'PA' ~ calculate_total(df = Als, state = 'PA', year = 2000))
+      ) |> 
+  summarise(
+    Percentage = round((sum(Count) / mean(Total)) * 100,
+                        digits = 2)) |>
+  pivot_wider(names_from = Name,
+            values_from = Percentage) |> 
+  kable(caption = 'Percentages of the different 
+        spellings across California & Pennsylvania (2000)') |> 
+  kable_material_dark(bootstrap_options = 'striped',
+                html_font = 'Helvetica')
+```
+
+[Dr. T's Feedback:]{.underline}
+
+*It could be fun to round the percentages to 2 decimal values and add a % to the end!*
+
+#### Revised table
+
+```{r revised-chunk}
+Als |> 
+  filter(State == 'CA' | State == 'PA',
+         Year == 2000) |>
+  group_by(State, Name) |>
+    mutate(
+     Count = replace_na(Count, 0),
+     Total = case_when(
+        State == 'CA' ~ calculate_total(df = Als, state = 'CA', year = 2000),
+        State == 'PA' ~ calculate_total(df = Als, state = 'PA', year = 2000))
+      ) |> 
+  summarise(
+    Proportion = sum(Count) / mean(Total)) |>
+  pivot_wider(names_from = Name,
+            values_from = Proportion) |> 
+  datatable(caption = 'Percentages of the different 
+        spellings across California & Pennsylvania (2000)') |>
+  formatPercentage(c('Allan', 'Alan', 'Allen'), 2)  #added percent signs in the new table for the revision
+```
