@@ -1,15 +1,11 @@
 ---
 title: "Lightning Round Essays"
-format:
-  html:
-    self-contained: true
-    theme: lux
+format: html
 author: "Hannah Pawig"
-date: "12/3/22"
 editor: visual
 ---
 
-1.  If Anagha Sikha doesn't earn an A in this class, then no one should because from what I've seen, she has put much of her effort into each of the labs and assignments, asking questions in the class discord, revising all her assignments that needed revisions, and going to office hours almost every week sometimes even just for clarification on things.
+1.  If Anagha Sikha doesn't earn an A in this class, then no one should because from what I've seen, she has put much of her effort into each of the labs and assignments, asking questions in the class discord, revising all her assignments that needed revisions, and making the effort to go to office hours even just for clarification on things.
 
 2.  The hardest part of this class for me was summarizing numerical variables over several groups when the data is fairly large, such as in Lab 4, because it took lots of time for me to understand the tools needed and their order in my pipeline to create the desired summary output in a data frame format.
 
