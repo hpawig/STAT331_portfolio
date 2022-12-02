@@ -5,7 +5,7 @@ format: pdf
 editor: visual
 ---
 
-I believe the grade I have earned in this course is an A+. Throughout the quarter, I've only submitted 1 late lab and 1 late challenge assignment during week 4, but every other assignment, revision, practice activity, and preview activities I've submitted as mostly complete or complete on time; I am on par with all of the outlined guidelines for the A threshold and have gone beyond in terms of consistently pretty documents, intentional collaboration in and out of the classroom, and sometimes finding a new way to provide a solution in assignments.
+I believe the grade I have earned in this course is an A+.
 
 *Preview Activity 7*
 
@@ -53,6 +53,8 @@ I believe the grade I have earned in this course is an A+. Throughout the quarte
 
 -   Whole document: **R-1**
 
+-   Q1: **WD-7**
+
 -   Q5 & Q7: **DSM-2**
 
 -   Q9: **PE-4,** **DVS-3**
@@ -61,7 +63,9 @@ I believe the grade I have earned in this course is an A+. Throughout the quarte
 
 -   Q1: **DVS-6, DVS-7**
 
-I've displayed a commitment to continued learning by always trying to find ways to revise my original thinking every time I am given the chance, and finding alternative solutions that we may not have seen in class but doing my own research to give other methods a try on assignments. In my first attempt to revise a few questions from Lab 4, I did end up changing my methods to find the correct answers for questions 4 and 5; for 6, I found the differences in avocado prices by type using the match() function, which is beyond the scope of this course, so I earned a G on that problem. I believe this to be one instance where I extended my learning because I found an alternative way to calculate differences between rows. Using a trend line for the visualization in Challenge 4 was another way I extended my learning, since at that time we had not learned how to fit a linear regression line. An additional instance of demonstrating continued learning is in my portfolio revision of Challenge 9: I was not requested to do any revisions *but* I was inspired to investigate anyway how to add percent symbols inside a formatted table, like the feedback comment had suggested on my original submission, which was the change I made.
+Throughout the quarter, I've only submitted 1 late lab and 1 late challenge assignment during week 4, but every other assignment, revision, practice activity, and preview activities I've submitted as mostly complete or complete on time; I am on par with all of the outlined guidelines for the A threshold and have gone beyond in terms of consistently pretty documents, intentional collaboration in and out of the classroom, and sometimes finding a new way to provide a solution in assignments.
+
+I've displayed a commitment to continued learning by always trying to find ways to revise my original thinking every time I am given the chance, and finding alternative solutions that we may not have seen in class but doing my own research to give other methods a try on assignments. In my first attempt to revise a few questions from Lab 4, I did end up changing my methods to find the correct answers for questions 4-6; for 6, I found the differences in avocado prices by type using the match() function, which is beyond the scope of this course, so I earned a G on that problem again. I believe this to be one instance where I extended my learning because I found an alternative way to calculate differences between rows. Using a trend line for the visualization in Challenge 4 was another way I extended my learning, since at that time we had not learned how to fit a linear regression line. An additional instance of demonstrating continued learning is in my portfolio revision of Challenge 9: I was not requested to do any revisions *but* I was inspired to investigate anyway how to add percent symbols inside a formatted table using the datatable package, like the feedback comment had suggested on my original submission, which was the change I made.
 
 In my second revision of Lab 4 (question 6), which I am submitting for this portfolio, I was able to find a way to use pivot_wider() for question to find differences in price between avocado types within each of the 4 California regions, after initially finding these price differences with a calculator. This was an example of my commitment to revision, as this revision is my second revision attempt at earning an S for the problem. In each of my revisions, my revision reflections were not a simple comment about me changing my code; I explained and intentionally reflected on my old and new thought processes.
 
