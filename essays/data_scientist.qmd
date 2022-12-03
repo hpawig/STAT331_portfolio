@@ -5,20 +5,6 @@ author: "Hannah Pawig"
 editor: visual
 ---
 
-An area of growth would be making the desired outputs coherent and digestible, whether those outputs are graphs, tables, or an extracted row of data. Lab 9 question 9 is an example of an easy-to-comprehend
-graph, with line colors corresponding to the different spellings of \"Allan,\" informative titles, and axes that show the necessary tick marks. In Portfolio Revision Challenge 9 question 11, I displayed a clear output in a data table form, and we can plainly see that California relatively has 4% more of babies named Allan/Alan/Allen that use the spelling \"Allan\" without much extensive examination. I learned to apply several visualization formatting options which can allow graphs and tables to be more reader-friendly, an important skill for data scientists because those visuals would potentially be shared to an audience that have little to no experience with statistics.
+An area of growth would be making the desired outputs coherent and digestible, whether those outputs are graphs, tables, or an extracted row of data. Lab 9 question 9 is an example of an easy-to-comprehend graph, with line colors corresponding to the different spellings of "Allan," informative titles, and axes that show the necessary tick marks. In Portfolio Revision Challenge 9 question 11, I displayed a clear output in a data table form, and we can plainly see that California relatively has 4% more of babies named Allan/Alan/Allen that use the spelling "Allan" without much extensive examination. I learned to apply several visualization formatting options which can allow graphs and tables to be more reader-friendly, an important skill for data scientists because those visuals would potentially be shared to an audience that have little to no experience with statistics.
 
 Another area of improvement as a student of data science would be staying in good practices when programming while handling data in general. Writing tidy, well documented, and coherent code and not creating unnecessary objects were some of the practices I have started to form habits out of while programming, as can be seen in Lab 4. This is significant in the practice of data science because when working with peers or referencing your own code may cause difficulties in comprehension for yourself or peers, when the code method used was not well-structured. A third area I have improved in is being more intuitive with how to deal with data, an improvement that is displayed in Lab 9's setup, question 1, and question 3, where I was able to build a pipeline that led to a desired output from the original loaded data---a concept I had been briefly introduced to prior to STAT 331. I have improved with this intuitiveness in the sense where, with all the tools we have gathered throughout the quarter I can better know how to familiarize myself with a data set, manipulate it, and achieve a new data table with the specific information I want without much thought; I believe that practitioners of data science must have this "fluency" with working with datasets when needed to hone in on data about a certain sub-population from the dataset, especially considering that there are a large number of different formats that collected data may come in.
-
-
-
-
-
-
-
-
-
-
-
-
-
